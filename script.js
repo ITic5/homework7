@@ -25,12 +25,16 @@ for (let p in paragraphs) {
     }
 }
 
-/*Homework: hteo sam malo da otezam sebi,
-* ali nisam uspeo bas sve sam, jer izgleda da ne razumem bas najbolje koja se
+//Homework
+
+/*Hteo sam malo da otezam malo domaci,
+* ali nisam uspeo bas sve sam da resim, jer izgleda da ne razumem bas najbolje koja se
 * petlja kada koristi, posto sam pokusavao da sve uradim sa forin.
 * U sustini konsultovao sam se sa chatgpt-em sta nije u redu sa kodom. Ukazao mi je
 * na to da se ne moze koristiti forin nego forof ili foreach, a s obzirom da to jos
 * nisam presao u lekcijama, pitao sam da li moze obican for loop. Ostalo je bilo jasno.
+* UPDATE: Pogledao sam sledecu lekciju gde se pominje forof i sredio sam prvu petlju ovde,
+* umesto for(i=0;i<adsWrapper.lenght;i++).
 */
 let ads = [
     {
@@ -58,7 +62,7 @@ adsContainer.appendChild(secondAd);
 secondAd.classList.add("adWrapper");
 
 let adsWrapper = document.querySelectorAll(".adWrapper");
-for (let adWrap = 0; adWrap < adsWrapper.length; adWrap++) {
+for (let adWrap of adsWrapper) {
     let adHeading = document.createElement("h2");
     adHeading.classList.add("adHeading");
     let adPrice = document.createElement("p");
@@ -66,10 +70,10 @@ for (let adWrap = 0; adWrap < adsWrapper.length; adWrap++) {
     let adImage = document.createElement("img");
     adImage.classList.add("adImage");
 
-    adsWrapper[adWrap].appendChild(adHeading);
-    adsWrapper[adWrap].appendChild(adPrice);
-    adsWrapper[adWrap].appendChild(adImage);
-    adsWrapper[adWrap].style.backgroundColor = "#fff";
+    adWrap.appendChild(adHeading);
+    adWrap.appendChild(adPrice);
+    adWrap.appendChild(adImage);
+    adWrap.style.backgroundColor = "#fff";
 }
 let adHeadings = document.querySelectorAll(".adHeading");
 let adPrices = document.querySelectorAll(".adPrice");
